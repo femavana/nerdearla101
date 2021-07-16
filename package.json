@@ -1,7 +1,7 @@
 {
   "name": "github-actions-enabler",
   "displayName": "GitHub Actions Enabler",
-  "description": "Enable GitHub Actions on a your project via a simple VS Code Command",
+  "description": "Habilita GitHub Actions en tu proyecto ejecutando un simple comando VS Code",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.57.0"
@@ -10,14 +10,14 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:github-actions-enabler.enableGitHubActions"
+    "onCommand:github-actions-enabler.habilitarGithubActions"
   ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "github-actions-enabler.enableGitHubActions",
-        "title": "Enable GitHub Actions on this project...",
+        "command": "github-actions-enabler.habilitarGithubActions",
+        "title": "Habilita GitHub Actions en este proyecto...",
         "enablement": "workspaceFolderCount >= 1"
       }
     ]
