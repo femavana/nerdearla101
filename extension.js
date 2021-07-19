@@ -40,12 +40,38 @@ async function preguntarVersionDeNodeJs() {
 		title: 'Version de NodeJS',
 		placeHolder: 'Ej. 12',
 		prompt: 'La version de NodeJS a utilizar para correr los tests',
-    }) ?? '';
+		validateInput: text => {
+			return isNaN(text) ? 'La version no es valida' : null;
+		}
+	}) ?? '';
 	return version;
+}
+
+/**
+ * Devuelve true si el archivo de configuracion de github action existe en este proyecto
+ */
+function estaGitHubActionsConfigurado() {
+	const workspaceRoot = vscode.workspace.workspaceFolders[0].uri;
+	return vscode.workspace.fs.stat(vscode.Uri.joinPath(workspaceRoot, GITHUB_ACTIONS_CONFIG_FILE)).then(
+		() => {
+			return true;
+		},
+		() => {
+			return false;
+		});
 }
 
 function activate(context) {
 	let disposable = vscode.commands.registerCommand('github-actions-enabler.habilitarGithubActions', async () => {
+		if (vscode.workspace.workspaceFolders === undefined) {
+			vscode.window.showWarningMessage('Se necesita un proyecto abierto.');
+			return;
+		}
+		if (await estaGitHubActionsConfigurado()) {
+			vscode.window.showWarningMessage('GitHub Actions ya está configurado en este proyecto.');
+			return;
+		}
+
 		const version = await preguntarVersionDeNodeJs();
 		if (version) {
 			crearGithubActionsWorkflow(version);
