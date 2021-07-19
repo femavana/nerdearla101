@@ -21,7 +21,7 @@ const vscode = require('vscode');
 
 function activate(context) {
 	let disposable = vscode.commands.registerCommand('github-actions-enabler.habilitarGithubActions', async () => {
-      vscode.window.showInformationMessage("Se creo el workflow de Github Actions");
+    	vscode.window.showInformationMessage("Se creo el workflow de Github Actions");
 	});
 	context.subscriptions.push(disposable);
 }

@@ -3,7 +3,8 @@
 Este repositorio contiene una extensión de Visual Studio Code que permite configurar GitHub Actions
 en un proyecto NodeJS de manera sencilla. Lo llamamos github-actions-enabler
 
-Es parte del taller "Apropiándonos de los medios de producción con Visual Studio Code".
+Es parte del taller "Apropiándonos de los medios de producción con Visual Studio Code" en
+Nerdearla101 edición 2021.
 
 El branch `main` contiene el template necesario para comenzar la resolución del enunciado planteado
 en el taller. 
@@ -33,4 +34,3 @@ Tras la resolución de diferentes tasks se puede encontrar la resolución en el 
 - No escribir el archivo si no hay un proyecto abierto.
 
 (Solución en branch `final`)
-
