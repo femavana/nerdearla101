@@ -1,5 +1,6 @@
 {
   "name": "github-actions-enabler",
+  "publisher": "nerdearla101",
   "displayName": "GitHub Actions Enabler",
   "description": "Habilita GitHub Actions en tu proyecto ejecutando un simple comando VS Code",
   "version": "0.0.1",
